@@ -6,7 +6,7 @@ site=requests.get("https://www.trendyol.com/tum--urunler?q="+isim+"&st="+isim+"&
 html_kodu =site.content #içeriğini alıyoruz
 islenmis_html=BeautifulSoup(html_kodu,features="html.parser") 
 
-urun_isimleri=islenmis_html.find_all('span', attrs={'class':'prdct-desc-cntnr-name'}) #ürün isimlerini alıyoruz class 'prdct...'
+urun_isimleri=islenmis_html.find_all('span', attrs={'class':'prdct-desc-cntnr-name'}) 
 urun_fiyatlari=islenmis_html.find_all('div', attrs={'class':'prc-box-sllng'}) #ürün fiyatlarını alıyoruz class 'prc-box...'
 
 urun_linkleri=islenmis_html.find_all('a',attrs={'class':'p-card-chldrn-cntnr'}) #ürün linklerini alıyoruz
