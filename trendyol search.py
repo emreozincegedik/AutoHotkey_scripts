@@ -9,7 +9,7 @@ islenmis_html=BeautifulSoup(html_kodu,features="html.parser")
 urun_isimleri=islenmis_html.find_all('span', attrs={'class':'prdct-desc-cntnr-name'}) 
 urun_fiyatlari=islenmis_html.find_all('div', attrs={'class':'prc-box-sllng'}) 
 
-urun_linkleri=islenmis_html.find_all('a',attrs={'class':'p-card-chldrn-cntnr'}) #ürün linklerini alıyoruz
+urun_linkleri=islenmis_html.find_all('a',attrs={'class':'p-card-chldrn-cntnr'}) 
 i=1
 for isim,fiyat in zip(urun_isimleri,urun_fiyatlari):  #döngüye sokup ürün numarası, ismi ve fiyatlarını yazdırıyoruz
   print(str(i)+". "+str(isim.attrs['title'])+" "+ str(fiyat.text)) #yazdırma işlemi
