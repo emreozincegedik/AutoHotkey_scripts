@@ -14,6 +14,7 @@ while True:
     print("No such movie is found")
     proper="proper "
     continue
+  proper=""
   regex=re.findall('\s{2,}(.*?\))',movie_names.text)
   movies=movie_names.find_all('td', attrs={'class':'result_text'})
   review_long_movies={}
@@ -37,7 +38,6 @@ while True:
         print(comment.text)
     else:
       print("No reviews exist")
-    proper=""
   if len(review_long_movies)!=0:
     want_full=input("Do you want to see full review of a movie? y/n ")
     while want_full!="n":
